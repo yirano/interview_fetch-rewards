@@ -11,8 +11,8 @@ const StyledContainer = styled.div`
 
 export const App = () => {
 	const [filtered, setFiltered] = useState()
-	const [filterBy, setFilterBy] = useState()
 	const [displayId, setDisplayId] = useState()
+	const [render, setRender] = useState(filtered)
 
 	useEffect(() => {
 		axios
@@ -31,14 +31,19 @@ export const App = () => {
 				console.log('Error fetching data --> ', err)
 			})
 	}, [])
-	console.log(displayId)
 	const handleFilter = (e) => {
-		console.log('Select value --> ', e.target.value)
+		const copy = [...filtered]
+		const filter = copy.filter(item => e.target.value === 'all' ? item : item.listId == e.target.value)
+		console.log('handle --> ', filter)
+		setRender(filter)
 	}
 	return (
 		<StyledContainer>
 			<Menu handleFilter={handleFilter} displayId={displayId} />
-			{filtered ? filtered.sort((a, b) => a.name.split(' ')[1] - b.name.split(' ')[1]).map(item => <Card data={item} key={item.id} />) : null}
+			{filtered ?
+				!render ? filtered.sort((a, b) => a.name.split(' ')[1] - b.name.split(' ')[1]).map(item => <Card data={item} key={item.id} />)
+					: render.sort((a, b) => a.name.split(' ')[1] - b.name.split(' ')[1]).map(item => <Card data={item} key={item.id} />)
+				: null}
 		</StyledContainer>
 	)
 }
