@@ -1,0 +1,29 @@
+{
+  "name": "interview_fetch-rewards",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yirano/interview_fetch-rewards.git"
+  },
+  "keywords": [],
+  "author": "Tiffany Arellano",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yirano/interview_fetch-rewards/issues"
+  },
+  "homepage": "https://github.com/yirano/interview_fetch-rewards#readme",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "styled-components": "^5.2.0"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}
