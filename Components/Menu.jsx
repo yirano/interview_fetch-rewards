@@ -3,6 +3,7 @@ import React from 'react'
 const Menu = (props) => {
     return (
         <div>
+            {/* Map through data to dynamically display options */}
             <select id="selectId" name="selectId" onChange={(e) => props.handleFilter(e)}>
                 <option disabled defaultValue value>-- Filter by List ID --</option>
                 <option value="all">All</option>
