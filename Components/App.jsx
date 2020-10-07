@@ -34,7 +34,6 @@ export const App = () => {
 	const handleFilter = (e) => {
 		const copy = [...filtered]
 		const filter = copy.filter(item => e.target.value === 'all' ? item : item.listId == e.target.value)
-		console.log('handle --> ', filter)
 		setRender(filter)
 	}
 	return (
